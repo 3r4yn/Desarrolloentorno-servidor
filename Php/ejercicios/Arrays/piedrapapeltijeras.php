@@ -25,16 +25,23 @@ $tmsg = [
  */
 
 function calcularGanador (String $valor1, String $valor2): int{
-    
-    return 0;
+    if ($valor1 === $valor2) {
+        return 0;
+    }
+    if (($valor1 === PIEDRA && $valor2 === TIJERAS) || 
+        ($valor1 === PAPEL && $valor2 === PIEDRA) || 
+        ($valor1 === TIJERAS && $valor2 === PAPEL)) {
+        return 1;
+    }
+    return 2;
 }
 /**
  *  Obtiene un valor aleatorio PIEDRA, PAPEL O TIJERAS
  * @return string
  */
 function obtenerFicha (): string {
-   
-   return PAPEL;
+   $fichas = [PIEDRA, PAPEL, TIJERAS];
+    return $fichas[rand(0, 2)];
   }
 
 
