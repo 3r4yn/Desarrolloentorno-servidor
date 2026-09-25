@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\Users\BEST-HP\OneDrive\SMR\2DAW\Desarrollo Entorno-servidor\1trimestrejava\.metadata\.plugins\org.eclipse.jdt.core
-1362210961.index
-981403239.index
-1865797976.index
