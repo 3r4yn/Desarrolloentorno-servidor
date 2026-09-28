@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso clausula this</title>
+    <script>
+        function validate(obj, lowval, hival){
+        console.log(typeof(obj.value));
+        if ((obj.value < lowval) || (obj.value > hival))
+        alert("¡Valor inválido!");
+        }
+        
+       /*  function validate(obj, lowval, hival){
+        console.log(typeof (obj.value);
+        if ((document.getElementById("age")[0].value < lowval) || ((obj.value > hival))
+        alert("¡Valor inválido!");
+        }*/
+    </script>
+</head>
+<body>
+    <b>Introduzca un número entre 18 y 99:</b>
+    <input type="text" name="age" size=3 autofocus onChange="validate(this, 18, 99);">
+</body>
+
+</html>

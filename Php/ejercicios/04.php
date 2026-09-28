@@ -13,7 +13,7 @@
     $totalnumeros=0;
     while($seisconsecutivo<3){
         $num=random_int(1,10);
-        $totalnumeros=++;
+        $totalnumeros++;
         if($num==6){
             $seisconsecutivo++;
         }   else{
@@ -22,7 +22,8 @@
     }
     $cronofin=microtime(true);
     $tiempototalms=($cronofin-$cronoinicio)*1000;
-    echo "Han salido tres 6 seguidos tras generar ". $totalnumeros. " numeros en ".round($tiempototalms,3). " milisegundos";
+    $tiemporedondeado= round($tiempototalms, 3);
+    echo "Han salido tres 6 seguidos tras generar $totalnumeros numeros en $tiemporedondeado milisegundos";
     ?>
 </body>
 </html>
