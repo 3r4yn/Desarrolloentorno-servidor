@@ -10,8 +10,8 @@
      /** @var array $paises */
      /** @var array $ciudades */
      include("infopaises.php");
+//otra forma es utilizar uasort para evitar lista[] y foreach ..
      $lista=[];
-
      foreach($paises as $nombre => $info){
         $lista[] = [
         "nombre" => $nombre,
@@ -20,11 +20,13 @@
         ];
      }
 //usort funcion que ordena array indexado, reindexa indices de forma ascendente 
+//Se puede crear antes la funcion o crearla en el mismo usort como en el ejemplo.
      usort($lista, function($a, $b){
 //Compara el $a y $b comparando si es menor,igual o mayor que el otro pais..
         return $a ["poblacion"] <=> $b["poblacion"];
      } );
 //El ultimo pais de la lista lo pasamos a $max que sera el mas poblado por que esta ordenado de menor a mayor
+//podriamos usar array key last tambien nos daria el ultimo la ultima clave de un array..
      $max = $lista[count($lista)-1];
      echo "El pais con mas poblacion es: " . $max["nombre"]. "<br>";
      echo  "Capital: " .$max["capital"]. "<br>";
