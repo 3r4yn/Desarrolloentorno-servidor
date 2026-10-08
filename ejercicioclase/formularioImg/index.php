@@ -20,15 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     $magia = htmlspecialchars($_POST['magia'] ?? 'No', ENT_QUOTES, 'UTF-8');
 
-    // Inicialización de variables para la imagen
-    $imagenPath = '';
-    $imagenHeader = '';
-    $errorMensaje = '';
+    // Directorio de subidas y ruta de la calavera dentro de uploads/
     $uploadDir = 'uploads/';
+    $calaveraPath = 'uploads/calavera.png';
 
     if (!file_exists($uploadDir)) {
         mkdir($uploadDir, 0777, true);
     }
+
+    $imagenPath = '';
+    $imagenHeader = '';
+    $errorMensaje = '';
 
     // Comprobar si se ha intentado subir un archivo
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] !== UPLOAD_ERR_NO_FILE) {
@@ -41,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($file['error'] !== UPLOAD_ERR_OK || $file['size'] > $maxSize || $fileExt !== 'png' || $mimeType !== 'image/png') {
             $imagenHeader = 'No se subió ninguna imagen.';
-            $imagenPath = 'calavera.png';
+            $imagenPath = $calaveraPath;
             $errorMensaje = 'Error al subir la imagen';
         } else {
             $destino = $uploadDir . basename($file['name']);
@@ -50,14 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $imagenPath = $destino;
             } else {
                 $imagenHeader = 'No se subió ninguna imagen.';
-                $imagenPath = 'calavera.png';
+                $imagenPath = $calaveraPath;
                 $errorMensaje = 'Error al subir la imagen';
             }
         }
     } else {
         // Simplemente no se indicó ninguna imagen (sin error)
         $imagenHeader = 'No se subió ninguna imagen.';
-        $imagenPath = 'calavera.png';
+        $imagenPath = $calaveraPath;
     }
 ?>
 <!DOCTYPE html>
