@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03</title>
+</head>
+<body>
+        <div style="background-color: blue; color: white; padding: 10px; text-align: center;">
+        <h1>Formularios con controles HTML5</h1>
+        </div><br>
+
+    <form action="03.php" method="post">
+    <label for="numero1" >NUMERO 1(number)</label>
+    <input type="number" id="numero1" name="numero1" value="50"><br>
+
+    <label for="numero2" >NUMERO 2 (range[10-100]):</label>
+    <input type="range" id="numero2" name="numero2" min="10" max="100" value="10"><br>
+    
+    <label for="estacion" >Estaciones</label>
+    <input list="estaciones" id="estacion" name="estaciones">
+    <datalist id="estaciones">
+        <option value="primavera">
+        <option value="otoño">
+        <option value="verano">
+        <option value="invierno">
+    </datalist><br><br>
+
+    <label for="color" >Color favorito:</label>
+    <input type="color" id="color" name="color" style="width: 6%; height: 20px;"><br>
+
+    <label for="buscar" >Buscar</label>
+    <input type="search" id="buscar" name="buscar"><br>
+
+    <label for="nombre" >Nombre</label>
+    <input type="text" id="nombre" name="nombre"><br>
+
+    <label for="apellido" >Apellido</label>
+    <input type="text" id="apellido" name="apellido"><br>
+
+    <label for="email" >E-mail</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="fecha" >Fecha de nacimiento</label>
+    <input type="date" id="fecha" name="fecha"><br>
+
+    <label for="edad" >Edad(0-150)</label>
+    <input type="number" id="edad" name="edad" min="0" max="150"><br>
+
+    <label for="paginapersonal" >Pagina personal</label>
+    <input type="url" id="paginapersonal" name="paginapersonal"><br>
+
+    <label for="horariode" >Horario: De</label>
+    <input type="time" id="horariode" name="horariode">
+    <label for="horarioa" >a</label>
+    <input type="time" id="horarioa" name="horarioa"><br><br>
+
+    <input type="submit" value="Enviar consulta" name="enviar">
+
+    </form>
+</body>
+</html>
