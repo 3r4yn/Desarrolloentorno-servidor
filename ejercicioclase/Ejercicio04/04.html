@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>04</title>
+    <style>
+        .seccion {
+            margin-bottom: 15px;
+        }
+        .titulo-seccion {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
     
@@ -15,15 +25,72 @@
     
     <div class="seccion">
 
-    <label for="campos">CAMPOS DE TEXTO:</label><br>
-    
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre"><br>
+        <div class="titulo-seccion">CAMPOS DE TEXTO:</div>
+        
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
 
-    <label for="contraseña">Contraseña:</label><br>
-    <input type="text" id="contraseña" name="contraseña"><br>
-    
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="text" id="contraseña" name="contraseña"><br>
+        
     </div>
+        <hr>
+    <div class="seccion">
+        <div class="titulo-seccion">RADIO:</div><br>
+        <label><input type="radio" name="color" value="rojo">Rojo</label><br>
+        <label><input type="radio" name="color" value="naranja">Naranja<label><br>
+        <label><input type="radio" name="color" value="verde">Verde</label>
+    </div>
+        <hr>
+    <div class="seccion">
+        <div class="titulo-seccion">CHECKBOX:</div>
+        <label>Quiero recibir publicidad<input type="checkbox" name="publicidad" value="SI"></label><br>
+    <div class="seccion">
+        <div class="titulo-seccion">MULTI CHECKBOX:</div>
+    <!-- name ="[]" agrupa múltiples inputs y permite que el servidor reciba todos los valores seleccionados en forma de array-->
+        <label>Inglés<input type="checkbox" name="idiomas[]" value="Inglés"></label>
+        <label>Francés<input type="checkbox" name="idiomas[]" value="Francés"></label>
+        <label>Aleman<input type="checkbox" name="idiomas[]" value="Alemán"></label>
+    </div>
+        <hr>
+
+    <div class="seccion">
+        <div class="titulo-seccion">SELECT:</div>
+        <p><strong>Simple:</strong></p>
+        <label for ="anio">Año de finalización de estudios:</label>
+        <select id="anio" name="anio">
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016" selected>2016</option>
+            <option value="2017">2017</option>
+        </select><br><br>
+
+        <p><strong>Múltiple:</strong></p>
+            <label for="ciudades">Ciudades:</label>
+
+            <select id="ciudades" name="ciudades[]" multiple size="4">
+                <option value="33">Asturias</option>
+                <option value="17">Gerona</option>
+                <option value="28">Madrid</option>
+                <option value="41">Sevilla</option>
+            </select>
+        </div>
+        <hr>
+
+        <div class="seccion">
+            <div class="titulo-seccion">TEXTAREA:</div>
+            <label for="comentarios">Escriba sus comentarios:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+        </div>
+        <hr>
+
+        <div class="seccion">
+            <div class="titulo-seccion">BOTONES:</div>
+            <input type="reset" value="Resetear el formulario">
+            <input type="submit" value="Enviar formulario al servidor">
+        </div>
+
+    
 
 </body>
 </html>
