@@ -1,6 +1,7 @@
 
 
 <?php 
+session_start();
 // PRIMERA APROXIMACIÓN AL MODELO VISTA CONTROLADOR. 
 // Funciones auxiliars Ej- usuarioOK
 include_once 'app/funciones.php';
@@ -41,6 +42,7 @@ else {
             include_once 'app/plantillas/detalles.php';
             break;
         case "Terminar": // Formulario inicial
+            session_destroy();
             include_once 'app/plantillas/entrada.php';
     }
     

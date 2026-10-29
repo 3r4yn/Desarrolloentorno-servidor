@@ -1,7 +1,7 @@
 <div>
 <form name='mensaje' method="POST">
 Tema<br>
-<!-- Protegemos con htmlspecialchars -->
+<!-- Integro el htmlspecialchars para proteger conviertiendo caracteres peligrosos en html y si no existe lo deja vacio-->
  <input type="text" name="tema" size=30 
    value="<?php echo isset($_REQUEST['tema']) ? htmlspecialchars($_REQUEST['tema'], ENT_QUOTES, 'UTF-8') : ''; ?>" ><br>
 
